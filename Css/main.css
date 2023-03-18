@@ -1,0 +1,117 @@
+/* header{
+  height: 100vh;
+  background-image: url("../events-heavenly-header.jpg");
+  background-position: center;
+  background-size: cover;
+  color: aliceblue;
+}
+.overlay{
+  background-color: rgba(214, 46, 51, 0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#nav-b{
+  top: 0;
+  left: 0;
+  background-color: #414658;
+}
+ul{
+  list-style: none;
+  color: aliceblue;
+}
+li a{
+  text-decoration: none;
+  color: aliceblue;
+  transition: .5s;
+
+}
+li a:hover,li i:hover{
+  color:rgb(214, 46, 51) ;
+}
+h1{
+  margin-top: 200px;
+}
+/* #icon{
+  margin-left: 250px;
+  z-index: 500;
+  padding-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 1.3s;
+  background-color: red;
+} */ 
+body{
+  background-color: #0D0D0D;
+  color: #f9f6f6 !important;
+  overflow: hidden;
+}
+
+.nav-tab{
+  background-color: #0D0D0D;
+  display: flex;
+}
+
+.logo{
+  width: 50px;
+}
+
+i{
+  cursor: pointer;
+}
+.items{
+  overflow: hidden;
+}
+.layer{
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  background-color: #f9f6f6ca;
+  transition: .5s;
+  color: #0D0D0D;
+}
+
+.items:hover .layer{
+  top: 0;
+}
+
+.side-nav-menu{
+  z-index: 99;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.alert{
+  width: fit-content;
+}
+
+ .load{
+  z-index: 999;
+  display: flex;
+}
+
+.inn-load{
+  position: absolute;
+  z-index: 9;
+  background-color: #0D0D0D;
+  display: flex;
+}
+section{
+  height: 8000px;
+}
+.form-control,.form-control:focus{
+  background-color: #0D0D0D;
+  color:white;
+}
+li{
+  transition: .5s;
+}
+li:hover{
+  color: orange;
+}
