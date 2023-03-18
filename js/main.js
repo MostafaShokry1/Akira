@@ -168,6 +168,7 @@ $("#cat").click(function(){
   getmeal();
   $("#search").removeClass("d-block")
   $("#search").addClass("d-none")
+
 })
 async function getMealsname(searchFirst) {
   Data.innerHTML = ""
@@ -223,7 +224,13 @@ $("#ser").click(function(){
   $("#search").addClass("d-block")
   $("#search").removeClass("d-none")
   Data.innerHTML="";
+  clearform();
 })
+function clearform(){
+  document.getElementById("exampleFormControlInput1").value="";
+  document.getElementById("exampleFormControlInput2").value="";
+
+}
 function displyarea(arr){
   let container=``;
   for(let i=0;i<arr.length;i++){
