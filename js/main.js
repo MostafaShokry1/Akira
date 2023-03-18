@@ -40,7 +40,7 @@ function displycato(arr){
   let container=``;
   for(let i=0;i<arr.length;i++){
     container +=`
-  <div  class="col-3 " >
+  <div  class="col-md-3" >
   <div   class="items position-relative cursor-pointer">
 <img src="${arr[i].strCategoryThumb}" class="w-100 rounded-1" alt="">
 <div count="${i}" class="layer text-center ">
@@ -70,7 +70,7 @@ async function getfirst(){
     let container=``;
     for(let i=0;i<arr.length;i++){
       container +=`
-    <div  class="col-3 " >
+    <div  class="col-md-3" >
     <div   class="items position-relative cursor-pointer">
 <img src="${arr[i].strMealThumb}" class="w-100 rounded-1" alt="">
 <div count="${i}" class="layer d-flex align-items-center ">
