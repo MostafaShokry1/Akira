@@ -54,7 +54,7 @@ function displycato(arr){
   document.getElementById("Data").innerHTML=container;
   
 }
-let searchContainer = document.getElementById("searchContainer");
+
 let Data =document.getElementById("Data");
 async function getfirst(){
   let meals=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
@@ -87,7 +87,6 @@ getfirst()
     $(".inn-load").fadeIn(300);
     Data.innerHTML = ""
     
-    searchContainer.innerHTML = "";
     let respone = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`);
     respone = await respone.json();
     
@@ -99,7 +98,6 @@ getfirst()
 
 function displayMealDetails(meal) {
     
-    searchContainer.innerHTML = "";
 
 
     let ingredients = ``
@@ -121,7 +119,7 @@ function displayMealDetails(meal) {
 
 
 
-    let cartoona = `
+    let container = `
     <div class="col-md-4">
                 <img class="w-100 rounded-3" src="${meal.strMealThumb}"
                     alt="">
@@ -146,7 +144,7 @@ function displayMealDetails(meal) {
                 <a target="_blank" href="${meal.strYoutube}" class="btn btn-danger">Youtube</a>
             </div>`
 
-    Data.innerHTML = cartoona
+    Data.innerHTML = container
 }
 async function getCategoryMeals(category) {
   $(".inn-load").fadeIn(300);
@@ -164,6 +162,9 @@ async function getCategoryMeals(category) {
 }
 
 $("#cat").click(function(){
+  $(".nav-tab").toggle(1000);
+  $(".open-close-icon").toggleClass("fa-bars");
+  $(".open-close-icon").toggleClass("fa-xmark");
   getmeal();
   $("#search").removeClass("d-block")
   $("#search").addClass("d-none")
@@ -173,21 +174,30 @@ async function getMealsname(searchFirst) {
   let meals = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchFirst}`)
   meals = await meals.json()
   displyfirst(meals.meals)
+  $(".items").click(function(e){
+    let iid= $(e.target).attr("count");
+    getMealDetails(meals.meals[iid].idMeal)
+  })
 }
 async function getMealsfirstletter(searchFirst) {
   Data.innerHTML = ""
   let meals = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchFirst}`)
   meals = await meals.json()
   displyfirst(meals.meals)
+  $(".items").click(function(e){
+    let iid= $(e.target).attr("count");
+    getMealDetails(meals.meals[iid].idMeal)
+  })
 
 }
 // let searchFirst=$("#exampleFormControlInput1").val();
 $("#exampleFormControlInput1").keyup(function(){
 let searchFirst=$("#exampleFormControlInput1").val();
 if(searchFirst.length > 0){
-$(".inn-load").fadeIn(300);
+  $(".inn-load").fadeIn(300);
 getMealsname(searchFirst)
-$(".inn-load").fadeOut(350);}
+$(".inn-load").fadeOut(350);
+}
 else
 Data.innerHTML="";
 
@@ -207,6 +217,9 @@ $("#exampleFormControlInput2").keyup(function(){
 
 
 $("#ser").click(function(){
+  $(".nav-tab").toggle(1000);
+  $(".open-close-icon").toggleClass("fa-bars");
+  $(".open-close-icon").toggleClass("fa-xmark");
   $("#search").addClass("d-block")
   $("#search").removeClass("d-none")
   Data.innerHTML="";
@@ -239,6 +252,8 @@ async function getarea() {
 }
 $("#are").click(function(){
   $(".nav-tab").toggle(1000);
+  $(".open-close-icon").toggleClass("fa-bars");
+  $(".open-close-icon").toggleClass("fa-xmark");
   getarea();
   $("#search").removeClass("d-block")
   $("#search").addClass("d-none")
@@ -285,6 +300,8 @@ async function getIng() {
 }
 $("#ING").click(function(){
   $(".nav-tab").toggle(1000);
+  $(".open-close-icon").toggleClass("fa-bars");
+  $(".open-close-icon").toggleClass("fa-xmark");
   getIng();
   $("#search").removeClass("d-block")
   $("#search").addClass("d-none")
@@ -368,6 +385,11 @@ async function getareaIng(area) {
     Data.innerHTML=container;
   }
   $("#con").click(function(){
+    $(".nav-tab").toggle(1000);
+    $(".open-close-icon").toggleClass("fa-bars");
+    $(".open-close-icon").toggleClass("fa-xmark");
+    $("#search").addClass("d-none")
+    $("#search").removeClass("d-block")
     displycontent();
     let test1=false;
     let test2=false;
